@@ -9,4 +9,8 @@ class BlackJackMan
   def hands(hand)
     @hand = hand
   end
+
+  def sum_point
+    @hand.point_in_hand.sum
+  end
 end

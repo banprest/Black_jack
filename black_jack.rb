@@ -11,7 +11,9 @@ require_relative 'terminal_interface'
 class BlackJack
 
   def initialize
-    game = Game.new
+    puts 'Введите имя'
+    name = gets.chomp
+    game = Game.new(name)
     TerminalInterface.new(game)
   end
 end
