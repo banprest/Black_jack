@@ -11,6 +11,6 @@ class BlackJackMan
   end
 
   def sum_point
-    @hand.point_in_hand.sum
+    @hand.see_point
   end
 end

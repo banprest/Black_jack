@@ -60,7 +60,7 @@ class TerminalInterface
     when '1'
     end_game
     when '2'
-    @game.player.hand.add_card(1, game.deck) if @game.player.hand.value_in_hand[2] == nil
+    @game.player.hand.add_card(1, game.deck) if @game.player.hand.see_value[2] == nil
     end_game
     else
     end_game

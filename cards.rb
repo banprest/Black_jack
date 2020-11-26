@@ -1,5 +1,6 @@
 class Card
-  attr_reader :values, :suits, :point
+  attr_accessor :point
+  attr_reader :values, :suits
   SUITS = ['<3', '^', '<>', '+'] 
   VALUES = [(2..10).to_a, 'V', 'D', 'K', 'T'].flatten
 
@@ -10,8 +11,13 @@ class Card
   end
 
   def set_point
-    @point = @values if @values.class == Integer
-    @point = 10 if @values.class == String
-    @point = 11 if @values == 'T' 
+    @point =
+      if  @values.instance_of?(Integer)
+        @values
+      elsif @values == 'T'
+        11
+      elsif @values.instance_of?(String)
+        10
+      end
   end
 end
